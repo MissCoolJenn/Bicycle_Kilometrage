@@ -31,6 +31,22 @@ def last_value(main_hash, first = None, second = None):  # возвращает 
     elif second != None:
         return value
     
+def kilometers_sum(main_hash):
+    time.sleep(0.5)
+    value_list = list(main_hash.values())
+
+    sum_all = 0
+    for i in value_list:
+        time.sleep(0.03)
+        try:
+            s = int(i)
+            if int(s):
+                print(sum_all) # остановился тут
+                sum_all += s
+        except:
+            pass
+    return sum_all
+    
 def writing_data(main_hash):
     time.sleep(0.5)
 
@@ -111,8 +127,7 @@ def loop(main_hash):
             writing_data(main_hash)
                 
         elif q == 'all':     # подсчет общего количества км
-            total_sum = sum(main_hash.values())  # остановился тут
-            print(total_sum)
+            print(f'Всего было пройдено {kilometers_sum(main_hash)} km')
 
         elif q == 'test':     # запуск части кода для теста
             pass
